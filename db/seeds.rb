@@ -27,10 +27,6 @@ answer_four = question_two.answers.create(content: "Pizza", filled: false)
 answer_five = question_two.answers.create(content: "More pizza", filled: false)
 answer_six = question_two.answers.create(content: "All the pizza", filled: false)
 
-answer_seven = question_three.answers.create(content: "Depends on my mood", filled: false)
-answer_eight = question_three.answers.create(content: "There ain't no color son", filled: false)
-answer_nine = question_three.answers.create(content: "Blue", filled: false)
-
 answer_ten = question_four.answers.create(content: "Shanghai", filled: false)
 answer_eleven = question_four.answers.create(content: "Tokyo", filled: false)
 answer_twelve = question_four.answers.create(content: "Ulaan Baatar", filled: false)
@@ -39,9 +35,6 @@ answer_thirteen = question_five.answers.create(content: "Beezle-who", filled: fa
 answer_fourteen = question_five.answers.create(content: "Beezle-wha", filled: false)
 answer_fifteen = question_five.answers.create(content: "Beezle-what", filled: false)
 
-answer_sixteen = question_six.answers.create(content: "Every thing", filled: false)
-answer_seventeen = question_six.answers.create(content: "Every one", filled: false)
-answer_eighteen = question_six.answers.create(content: "Every where", filled: false)
 
 
 
