@@ -10,8 +10,8 @@ survey_a = Survey.create(name: 'Survey A')
 survey_b = Survey.create(name: 'Survey B')
 
 question_one = survey_a.questions.create(content: "What is Lil Wayne's real name?", question_type: 'Checkbox')
-question_two = survey_a.questions.create(content: 'What is your favorite food?', question_type: 'Text')
-question_three = survey_a.questions.create(content: 'What is the color of the sky?', question_type: 'Dropdown')
+question_two = survey_a.questions.create(content: 'What is your favorite food?', question_type: 'Dropdown')
+question_three = survey_a.questions.create(content: 'What is the color of the sky?', question_type: 'Text')
 
 
 question_four = survey_b.questions.create(content: 'What is the capital of Japan?', question_type: 'Checkbox')
