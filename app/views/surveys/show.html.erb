@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="page-header">
+    <div class="btn-toolbar pull-right">
+      <%= link_to 'Edit', edit_survey_path(@survey), class: 'btn btn-primary', :style=>'color:#FFF;'  %>
+      <%= link_to 'Back', surveys_path, class: 'btn btn-primary', :style=>'color:#FFF;' %>
+    </div>
+    <h1> <%= @survey.name %></h1>
+  </div>
+  <ol>
+    <% if @survey.questions.any? %>
+
+      <% @survey.questions.each do |question| %>
+      <fieldset class="question-border">
+        <li class="collapsible-question">
+          <p class="question-section"> Question: <%= question.content %></p>
+          <p> Type: <%= question.question_type %></p>
+          <ul>
+            <% if question.answers.any? %>
+              <div class="fields-section">
+              <% question.answers.each do |answer| %>
+                  <li>Answer Option: <%= answer.content %> </li>
+              <% end %>
+              </div>
+            <% end %>
+          </ul>
+        </li>
+        </fieldset>
+      <%end %>
+    <%end %>
+  </ol>
+</div>
+

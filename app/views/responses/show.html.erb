@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="page-header">
+    <h1> <%= @response.name  %>'s  Response for <%= @response.survey %></h1>
+  </div>
+
+  <div class="container">
+    <h3> Data</h3>
+
+    <% @response.data.each do |k, v| %>
+      <p> <strong>Question:</strong> <%= @response.data[k]["Question"] %></p>
+
+      <p> <strong>Question Type:</strong> <%= @response.data[k]["Type"] %></p>
+
+      <% if @response.data[k]["Answer"].kind_of?(Array) %>
+        <p> <strong>Answer:</strong> <%= @response.data[k]["Answer"].join(", ") %></p>
+        <% else %>
+        <p> <strong>Answer:</strong> <%= @response.data[k]["Answer"] %></p>
+      <% end %>
+      <br>
+    <% end %>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

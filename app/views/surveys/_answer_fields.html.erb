@@ -1,0 +1,11 @@
+<fieldset>
+    <div class="form-group">
+      <%= f.label :content, 'Answer', class: "col-sm-2 control-label"  %>
+      <%= f.text_area :content, class: "form-control", placeholder: 'Enter Question Name'  %>
+      <%= f.hidden_field :_destroy %>
+      <%= link_to 'Remove Answer', '#', class: 'remove_fields', :style=>'color:#337ab7;' %>
+    </div>
+</fieldset>
+
+
+

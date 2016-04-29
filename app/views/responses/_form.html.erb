@@ -1,0 +1,35 @@
+<form id="response_form" action="<%= responses_path %>" method="POST">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input name="survey_id" value="<%= @survey.id %>" type="hidden">
+
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control response_name_val" placeholder="Enter Your Name">
+  </div>
+
+  <%@survey.questions.each do |question| %>
+    <div class="form-group">
+      <label class="label_question"><%= question.content %></label>
+      <% if question.question_type == "Dropdown"%>
+      <select name="" id="" class="form-control dropdown_answer">
+        <% question.answers.each do |answer| %>
+            <option value="<%= answer.content %>"><%= answer.content %></option>
+        <% end %>
+      </select>
+        <% elsif question.question_type == "Checkbox" %>
+          <% question.answers.each do |answer| %>
+            <div class="checkbox_answer">
+                <label>
+                  <input type="checkbox" value="<%= answer.content %>">
+                    <%= answer.content %>
+                </label>
+            </div>
+          <% end %>
+        <% elsif question.question_type == "Text" %>
+          <textarea class="form-control text_answer" placeholder="Enter Answer" rows="3"></textarea>
+      <% end %>
+    </div>
+  <% end %>
+  <button type="submit" class="btn btn-primary response_submit">Submit</button>
+</form>

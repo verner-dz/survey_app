@@ -1,0 +1,23 @@
+<fieldset class="question-border collapsible-question">
+  <div class="form-group">
+    <%= f.label :content, 'Question', class: "col-sm-2 control-label question-section",  style: "cursor:pointer; margin-top:0.8em;" %>
+    <%= f.text_area :content, class: "form-control", placeholder: 'Enter Question Name' %>
+  </div>
+  <div class="fields-section">
+    <div class="form-group nested_field">
+      <%= f.label :question_type, 'Type', class: "col-sm-2 control-label" %>
+      <%= f.select :question_type, ['Dropdown', 'Checkbox', 'Text'], {}, {class: "form-control question_type_selector" } %>
+    </div>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to 'Remove Question', '#', class: 'remove_fields', style: 'color:#337ab7;' %>
+    <div class="answers-section">
+      <h4> Answers </h4>
+      <%= f.fields_for :answers do |builder| %>
+        <%= render 'answer_fields', f: builder %>
+      <% end %>
+      <%= link_to_add_fields "Add Answer", f, :answers %>
+    </div>
+</fieldset>
+
+
+
