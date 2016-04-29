@@ -15,8 +15,8 @@ question_three = survey_a.questions.create(content: 'What is the color of the sk
 
 
 question_four = survey_b.questions.create(content: 'What is the capital of Japan?', question_type: 'Checkbox')
-question_five = survey_b.questions.create(content: 'Who is Beezlebub', question_type: 'Text')
-question_six = survey_b.questions.create(content: 'Who what where?', question_type: 'Dropdown')
+question_five = survey_b.questions.create(content: 'Who is Beezlebub', question_type: 'Dropdown')
+question_six = survey_b.questions.create(content: 'Who what where?', question_type: 'Text')
 
 
 answer_one = question_one.answers.create(content: "Wayne Drizzy", filled: false)
