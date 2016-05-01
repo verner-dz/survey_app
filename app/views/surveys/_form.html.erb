@@ -17,10 +17,13 @@
       <%= f.text_field :name, class: "form-control", placeholder: 'Enter Survey Name' %>
   </div>
 
-  <%= f.fields_for :questions do |builder| %>
-    <%= render 'question_fields', f: builder %>
-  <% end %>
+  <ul id="question_list">
+    <%= f.fields_for :questions do |builder| %>
+      <%= render 'question_fields', f: builder %>
+    <% end %>
+
   <%= link_to_add_fields "Add Question", f, :questions %>
+  </ul>
 
   <div >
     <%= f.submit nil, class: "btn btn-success"  %>

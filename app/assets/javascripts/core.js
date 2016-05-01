@@ -45,6 +45,16 @@ $(document).on('click', 'form .add_fields', function(event) {
 $(function(){
   hideAnswers();
   collapseDivs();
+
+  $('#question_list').sortable({
+     axis: "y",
+     update: function(event, ui) {
+      $('.fields-section').each(function(index) {
+        $(this).children('input.question_position').val(index + 1);
+      });
+     }
+  });
+
   $('form#response_form').submit(function(event) {
       var formData = [];
       var name = $('.response_name_val').val();
