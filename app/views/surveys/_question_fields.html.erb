@@ -1,4 +1,4 @@
-<li id="question_<%=f.object.id || f.object_name.gsub(/[^0-9]+/,'')%>">
+<div id="question_<%=f.object.id || f.object_name.gsub(/[^0-9]+/,'')%>">
   <fieldset class="question-border collapsible-question">
     <div class="form-group">
       <%= f.label :content, 'Question', class: "col-sm-2 control-label question-section",  style: "cursor:pointer; margin-top:0.8em;" %>
@@ -20,7 +20,7 @@
         <%= link_to_add_fields "Add Answer", f, :answers %>
       </div>
   </fieldset>
-</li>
+</div>
 
 
 
