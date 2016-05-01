@@ -9,8 +9,8 @@
         <%= f.label :question_type, 'Type', class: "col-sm-2 control-label" %>
         <%= f.select :question_type, ['Dropdown', 'Checkbox', 'Text'], {}, {class: "form-control question_type_selector" } %>
       </div>
-      <%= f.hidden_field :_destroy %>
       <%= f.hidden_field :position, :class => :question_position %>
+      <%= f.hidden_field :_destroy %>
       <%= link_to 'Remove Question', '#', class: 'remove_fields', style: 'color:#337ab7;' %>
       <div class="answers-section">
         <h4> Answers </h4>
