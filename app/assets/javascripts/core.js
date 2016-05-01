@@ -36,7 +36,11 @@ $(document).on('click', 'form .add_fields', function(event) {
   time = new Date().getTime();
   regexp = new RegExp($(this).data('id'), 'g');
   $(this).before($(this).data('fields').replace(regexp, time));
-  collapseDivs();
+  var precedingQuestionLabel = $(this).prev().find('.question-section').filter(':first');
+  var precedingAnswersSection = $(this).prev().find('.fields-section').filter(':first');
+  precedingQuestionLabel.click(function(e) {
+    precedingAnswersSection.slideToggle(200);
+  });
   hideAnswers();
   return event.preventDefault();
 });
