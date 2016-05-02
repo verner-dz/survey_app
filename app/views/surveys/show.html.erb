@@ -2,31 +2,31 @@
   <div class="page-header">
     <div class="btn-toolbar pull-right">
       <%= link_to 'Edit', edit_survey_path(@survey), class: 'btn btn-primary', :style=>'color:#FFF;'  %>
-      <%= link_to 'Back', surveys_path, class: 'btn btn-primary', :style=>'color:#FFF;' %>
+      <%= link_to 'All Surveys', surveys_path, class: 'btn btn-primary', :style=>'color:#FFF;' %>
     </div>
     <h1> <%= @survey.name %></h1>
   </div>
-  <ol>
+  <div class="panel panel-info">
     <% if @survey.questions.any? %>
-
       <% @survey.questions.each do |question| %>
-      <fieldset class="question-border">
-        <li class="collapsible-question">
-          <p class="question-section"> Question: <%= question.content %></p>
-          <p> Type: <%= question.question_type %></p>
-          <ul>
-            <% if question.answers.any? %>
-              <div class="fields-section">
-                  <% question.answers.each do |answer| %>
-                    <li>Answer Option: <%= answer.content %> </li>
-                  <% end %>
-              </div>
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= question.content %></h3>
+        </div>
+        <div class="panel-body" style="border: 1px solid #ddd; margin: 30px 30px 30px 30px">
+          <p> <strong>Question Type:</strong> <%= question.question_type %></p>
+        </div>
+        <% if question.answers.any? %>
+          <ul class="list-group" style="border: 1px solid #ddd; margin: 0px 30px 0px 30px">
+            <% question.answers.each do |answer| %>
+              <li class="list-group-item"><p> <strong>Answer Option:</strong> <%= answer.content %></p></li>
             <% end %>
           </ul>
-        </li>
-        </fieldset>
-      <%end %>
-    <%end %>
-  </ol>
+          <br>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
+
+
 
