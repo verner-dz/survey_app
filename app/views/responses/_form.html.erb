@@ -18,6 +18,7 @@
         <% end %>
       </select>
         <% elsif question.question_type == "Checkbox" %>
+        <div id="question_<%= question.id %>" class="checkbox_section">
           <% question.answers.each do |answer| %>
             <div class="checkbox_answer">
                 <label>
@@ -26,6 +27,7 @@
                 </label>
             </div>
           <% end %>
+        </div>
         <% elsif question.question_type == "Text" %>
           <textarea class="form-control text_answer" placeholder="Enter Answer" rows="3"></textarea>
       <% end %>

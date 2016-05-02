@@ -63,14 +63,16 @@ $(function(){
       var formData = [];
       var name = $('.response_name_val').val();
       $('.label_question').each(function(i, v) {
-        if($(this).next().hasClass("checkbox_answer")) {
+        if($(this).next().hasClass("checkbox_section")) {
+          var checkboxSectionId = $(this).next().attr('id');
           var selectedCheckBoxes = [];
-          $(".checkbox_answer").each(function(i,v) {
+          $('#'+ checkboxSectionId).children('div').each(function() {
             if($(this).find("input").prop("checked")) {
               selectedCheckBoxes.push($(this).find("input").val());
             }
           });
           formData.push({"Question": $(this).text(), "Answer": selectedCheckBoxes, "Type": "Checkbox"});
+          selectedCheckBoxes = [];
         } else if($(this).next().hasClass("dropdown_answer")) {
             formData.push({"Question": $(this).text(), "Answer": $(this).next().val(), "Type": "Dropdown"});
         } else if($(this).next().hasClass("text_answer")) {
